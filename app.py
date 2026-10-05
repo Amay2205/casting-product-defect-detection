@@ -6,8 +6,22 @@ import numpy as np
 st.title("Casting Product Defect Detection")
 st.write("Upload a casting product image to predict whether it is defective or normal.")
 
-model_path = "/content/drive/MyDrive/CNN_project/casting_cnn_model.keras"
-model = tf.keras.models.load_model(model_path)
+import os
+import urllib.request
+
+model_path = "casting_cnn_model.keras"
+
+model_url = "https://github.com/Amay2205/casting-product-defect-detection/releases/download/v1.0.0/casting_cnn_model.keras"
+
+if not os.path.exists(model_path):
+    with st.spinner("Downloading trained model..."):
+        urllib.request.urlretrieve(model_url, model_path)
+
+@st.cache_resource
+def load_model():
+    return tf.keras.models.load_model(model_path)
+
+model = load_model()
 
 st.success("Model loaded successfully!")
 
