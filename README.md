@@ -1,5 +1,11 @@
 # Industrial Casting Product Defect Detection
 
+## 🚀 Live Demo
+
+👉 [Try the Live Streamlit App](https://casting-appuct-defect-detection-lmbsrntnnzwoav4jwrafeh.streamlit.app/)
+
+Upload a casting product image and get a prediction of **Defective** or **Normal** with confidence.
+
 A CNN-based deep learning project that classifies industrial casting products as **Defective** or **Normal** using computer vision.
 
 ## Problem Statement
